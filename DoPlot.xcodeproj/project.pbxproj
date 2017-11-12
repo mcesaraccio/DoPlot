@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		423981491FB8AC510076821C /* DoPlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4239813F1FB8AC510076821C /* DoPlot.framework */; };
-		4239814E1FB8AC510076821C /* DoPlotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239814D1FB8AC510076821C /* DoPlotTests.swift */; };
 		423981501FB8AC510076821C /* DoPlot.h in Headers */ = {isa = PBXBuildFile; fileRef = 423981421FB8AC510076821C /* DoPlot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4239815A1FB8ACA00076821C /* BezierBuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423981591FB8ACA00076821C /* BezierBuildingTests.swift */; };
+		4239815E1FB8AD560076821C /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239815D1FB8AD560076821C /* Bezier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +28,9 @@
 		423981421FB8AC510076821C /* DoPlot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoPlot.h; sourceTree = "<group>"; };
 		423981431FB8AC510076821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		423981481FB8AC510076821C /* DoPlotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoPlotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4239814D1FB8AC510076821C /* DoPlotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoPlotTests.swift; sourceTree = "<group>"; };
 		4239814F1FB8AC510076821C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		423981591FB8ACA00076821C /* BezierBuildingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierBuildingTests.swift; sourceTree = "<group>"; };
+		4239815D1FB8AD560076821C /* Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bezier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		423981411FB8AC510076821C /* DoPlot */ = {
 			isa = PBXGroup;
 			children = (
+				4239815C1FB8AD320076821C /* Bezier */,
 				423981421FB8AC510076821C /* DoPlot.h */,
 				423981431FB8AC510076821C /* Info.plist */,
 			);
@@ -80,10 +83,18 @@
 		4239814C1FB8AC510076821C /* DoPlotTests */ = {
 			isa = PBXGroup;
 			children = (
-				4239814D1FB8AC510076821C /* DoPlotTests.swift */,
+				423981591FB8ACA00076821C /* BezierBuildingTests.swift */,
 				4239814F1FB8AC510076821C /* Info.plist */,
 			);
 			path = DoPlotTests;
+			sourceTree = "<group>";
+		};
+		4239815C1FB8AD320076821C /* Bezier */ = {
+			isa = PBXGroup;
+			children = (
+				4239815D1FB8AD560076821C /* Bezier.swift */,
+			);
+			path = Bezier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,10 +159,12 @@
 				TargetAttributes = {
 					4239813E1FB8AC510076821C = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					423981471FB8AC510076821C = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -196,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4239815E1FB8AD560076821C /* Bezier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4239814E1FB8AC510076821C /* DoPlotTests.swift in Sources */,
+				4239815A1FB8ACA00076821C /* BezierBuildingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +348,7 @@
 		423981541FB8AC510076821C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -343,18 +358,21 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DoPlot/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massimo.temp.DoPlot;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		423981551FB8AC510076821C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -364,24 +382,28 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DoPlot/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massimo.temp.DoPlot;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		423981571FB8AC510076821C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7S7Q438LZ;
 				INFOPLIST_FILE = DoPlotTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massimo.temp.DoPlotTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -390,6 +412,8 @@
 		423981581FB8AC510076821C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y7S7Q438LZ;
 				INFOPLIST_FILE = DoPlotTests/Info.plist;
